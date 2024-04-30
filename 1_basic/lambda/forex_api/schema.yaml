@@ -1,0 +1,46 @@
+openapi: 3.0.0
+info:
+  title: Currency API
+  description: Provides information about different currencies.
+  version: 1.0.0
+servers:
+  - url: https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1
+paths:
+  /currencies:
+    get:
+      description: |
+        List all available currencies
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                description: |
+                  A map where the key refers to the lowercase three-letter currency code and the value to the currency name in English.
+                additionalProperties:
+                  type: string
+  /currencies/{code}:
+    get:
+      description: |
+        List the exchange rates of all available currencies with the currency specified by the given currency code in the URL path parameter as the base currency
+      parameters:
+        - in: path
+          name: code
+          required: true
+          description: The lowercase three-letter code of the base currency for which to fetch exchange rates
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                description: |
+                  A map where the key refers to the three-letter currency code of the target currency and the value to the exchange rate to the target currency.
+                additionalProperties:
+                  type: number
+                  format: float
