@@ -1,3 +1,13 @@
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 5.47"
+    }
+  }
+  required_version = "~> 1.5"
+}
+
 # Use data sources to get common information about the environment
 data "aws_caller_identity" "this" {}
 data "aws_partition" "this" {}
