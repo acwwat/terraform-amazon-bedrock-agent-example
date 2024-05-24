@@ -2,7 +2,7 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 5.47"
+      version = "~> 5.49"
     }
   }
   required_version = "~> 1.5"
@@ -143,8 +143,7 @@ resource "aws_bedrockagent_agent_action_group" "forex_api" {
 
 resource "null_resource" "forex_asst_prepare" {
   triggers = {
-    forex_asst_state = sha256(jsonencode(aws_bedrockagent_agent.forex_asst))
-    forex_api_state  = sha256(jsonencode(aws_bedrockagent_agent_action_group.forex_api))
+    forex_api_state = sha256(jsonencode(aws_bedrockagent_agent_action_group.forex_api))
   }
   provisioner "local-exec" {
     command = "aws bedrock-agent prepare-agent --agent-id ${aws_bedrockagent_agent.forex_asst.id}"
