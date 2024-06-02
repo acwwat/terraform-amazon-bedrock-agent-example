@@ -34,4 +34,4 @@ override.tf.json
 terraform.rc
 
 # Temp directories created by the Terraform configurations
-*/tmp/*
+tmp/*
