@@ -1,0 +1,6 @@
+start_kb_ingestion_jobs_config_json = [
+  {
+    "knowledge_base_id" = "AAAAAAAAAA",
+    "data_source_ids"   = ["BBBBBBBBBB"]
+  }
+]
