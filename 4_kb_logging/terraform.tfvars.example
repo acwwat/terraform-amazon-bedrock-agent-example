@@ -1,0 +1,4 @@
+kb_id                                  = "AAAAAAAAAA"
+enable_kb_log_delivery_cloudwatch_logs = true
+enable_kb_log_delivery_s3              = true
+enable_kb_log_delivery_data_firehose   = true
