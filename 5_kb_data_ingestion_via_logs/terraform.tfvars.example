@@ -1,0 +1,8 @@
+start_kb_ingestion_jobs_config_json = [
+  {
+    "knowledge_base_id" = "AAAAAAAAAA",
+    "data_source_ids"   = ["BBBBBBBBBB"]
+  }
+]
+
+kb_app_log_group_name = "/aws/vendedlogs/bedrock/knowledge-base/APPLICATION_LOGS/AAAAAAAAAA"
